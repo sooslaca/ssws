@@ -9,4 +9,8 @@ all: build
 
 build:
 	@echo ==== GO BUILD
-	CGO_ENABLED=0 go build -tags all -trimpath -ldflags "-s -w" -o ssws .
+	CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o ssws .
+
+docker:
+	@echo ==== DOCKER BUILD
+	docker build -t sooslaca/ssws .
